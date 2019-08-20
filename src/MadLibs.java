@@ -6,14 +6,15 @@ public class MadLibs {
 		Scanner scan = new Scanner(System.in);
 		String a = "I will be ";
 		String playAgane = "";
+		// Start game
 		do {
 			String col = "";
 			String prof = "";
-			System.out.println("Enter your favorit color?");
-			col = scan.next();
-			System.out.println("Enter your favorit profession?");
-			prof = scan.next();
-			System.out.println(a + " " + col + " " + prof);
+			System.out.println("Enter your favorite color?");
+			col = scan.next(); // Game ask user enter favorite color
+			System.out.println("Enter your favorite profession?");
+			prof = scan.next(); // Game ask user enter favorite profession
+			System.out.println(a + " " + col + " " + prof); // Result String
 			System.out.println("Would you like play agane (y/n)?");
 			playAgane = scan.next();
 		}while (playAgane.equalsIgnoreCase("y"));

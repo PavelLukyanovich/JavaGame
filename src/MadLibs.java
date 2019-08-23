@@ -15,7 +15,7 @@ public class MadLibs {
 			System.out.println("Enter your favorite profession?");
 			prof = scan.next(); // Game ask user enter favorite profession
 			System.out.println(a + " " + col + " " + prof); // Result String
-			System.out.println("Would you like play agane (y/n)?");
+			System.out.println("Would you like to play tagane (y/n)?");
 			playAgane = scan.next();
 		}while (playAgane.equalsIgnoreCase("y"));
 		System.out.println("Thank you for good game! Bye bye!");

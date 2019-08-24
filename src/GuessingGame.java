@@ -1,7 +1,7 @@
 import javax.swing.JFrame;
+import java.awt.Window.Type;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-
 import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -26,6 +26,10 @@ public class GuessingGame extends JFrame {
 		String guessText = txtGuess.getText();
 		String message = "";
 		try { // - Check exceptions.
+	public void checkGuess() {
+		String guessText = txtGuess.getText();
+		String message = "";
+		try {
 			int guess = Integer.parseInt(guessText);
 			if (count1 == 0) {
 				message = "You lose... Number is: " + theNumber;
@@ -54,6 +58,9 @@ public class GuessingGame extends JFrame {
 	public void newGame() {
 		theNumber = (int) (Math.random() * 100 + 1);
 		btnPlayAgane.setVisible(false);
+	}
+	public void newGame() {
+		theNumber = (int) (Math.random() * 100 + 1);
 	}
 	public GuessingGame() {
 		getContentPane().setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
@@ -106,6 +113,7 @@ public class GuessingGame extends JFrame {
 		btnPlayAgane.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnPlayAgane.setEnabled(true);
 // Listener for a PLAY AGANE button.	
+		btnPlayAgane.setEnabled(true);
 		btnPlayAgane.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				newGame();
@@ -119,11 +127,15 @@ public class GuessingGame extends JFrame {
 		getContentPane().add(btnPlayAgane);
 	}
 // The main method of program
+			}
+		});
+		btnPlayAgane.setBounds(335, 229, 89, 23);
+		getContentPane().add(btnPlayAgane);
+	}
 	public static void main(String[] args) {
 		GuessingGame theGame = new GuessingGame();
 		theGame.newGame();
 		theGame.setSize(new Dimension(450, 300));
 		theGame.setVisible(true);
-
 	}
 }

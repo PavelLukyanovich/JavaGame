@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
  * The number was generate by your computer.
  * Will you more clever than your computer? Let's see.
  */
-// General class of game
+// General class of game.
 public class GuessingGame extends JFrame {
 	private JTextField txtGuess;
 	private JLabel lblOutput;
@@ -21,11 +21,11 @@ public class GuessingGame extends JFrame {
 	private JButton btnPlayAgane;
 	int count1 = 7;
 	int count2 = 1;
-// Check player's move
+// Check player's move.
 	public void checkGuess() {
 		String guessText = txtGuess.getText();
 		String message = "";
-		try { // - Check exceptions
+		try { // - Check exceptions.
 			int guess = Integer.parseInt(guessText);
 			if (count1 == 0) {
 				message = "You lose... Number is: " + theNumber;
@@ -50,7 +50,7 @@ public class GuessingGame extends JFrame {
 		txtGuess.requestFocus();
 		txtGuess.selectAll();
 	}
-// New game method
+// New game method.
 	public void newGame() {
 		theNumber = (int) (Math.random() * 100 + 1);
 		btnPlayAgane.setVisible(false);
@@ -73,7 +73,7 @@ public class GuessingGame extends JFrame {
 		getContentPane().add(lblGuessANumber);
 
 		txtGuess = new JTextField();
-// Listener for a text field
+// Listener for a text field.
 		txtGuess.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				checkGuess();
@@ -92,7 +92,7 @@ public class GuessingGame extends JFrame {
 		getContentPane().add(lblOutput);
 
 		JButton btnGuess = new JButton("Guess!");
-// Listener for a GUESS button		
+// Listener for a GUESS button.		
 		btnGuess.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				checkGuess();
@@ -105,12 +105,12 @@ public class GuessingGame extends JFrame {
 		btnPlayAgane = new JButton("Play agane!");
 		btnPlayAgane.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnPlayAgane.setEnabled(true);
-// Listener for a PLAY AGANE button		
+// Listener for a PLAY AGANE button.	
 		btnPlayAgane.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				newGame();
 				btnPlayAgane.setVisible(false);
-// When PLAY AGANE button had pressed, count variables become start condition				
+// When PLAY AGANE button had pressed, count variables become start condition.				
 				count1 = 7;
 				count2 = 0;
 			}
@@ -118,7 +118,7 @@ public class GuessingGame extends JFrame {
 		btnPlayAgane.setBounds(308, 228, 116, 23);
 		getContentPane().add(btnPlayAgane);
 	}
-// The main method of program
+// The main method of program.
 	public static void main(String[] args) {
 		GuessingGame theGame = new GuessingGame();
 		theGame.newGame();

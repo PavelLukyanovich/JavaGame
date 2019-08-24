@@ -1,5 +1,4 @@
 import javax.swing.JFrame;
-import java.awt.Window.Type;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Dimension;
@@ -22,10 +21,6 @@ public class GuessingGame extends JFrame {
 	int count1 = 7;
 	int count2 = 1;
 // Check player's move.
-	public void checkGuess() {
-		String guessText = txtGuess.getText();
-		String message = "";
-		try { // - Check exceptions.
 	public void checkGuess() {
 		String guessText = txtGuess.getText();
 		String message = "";
@@ -57,10 +52,8 @@ public class GuessingGame extends JFrame {
 // New game method.
 	public void newGame() {
 		theNumber = (int) (Math.random() * 100 + 1);
+// Make button PLAY AGANE unavailable.		
 		btnPlayAgane.setVisible(false);
-	}
-	public void newGame() {
-		theNumber = (int) (Math.random() * 100 + 1);
 	}
 	public GuessingGame() {
 		getContentPane().setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
@@ -126,12 +119,7 @@ public class GuessingGame extends JFrame {
 		btnPlayAgane.setBounds(308, 228, 116, 23);
 		getContentPane().add(btnPlayAgane);
 	}
-// The main method of program
-			}
-		});
-		btnPlayAgane.setBounds(335, 229, 89, 23);
-		getContentPane().add(btnPlayAgane);
-	}
+// The main method of program.
 	public static void main(String[] args) {
 		GuessingGame theGame = new GuessingGame();
 		theGame.newGame();

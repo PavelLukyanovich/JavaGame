@@ -118,7 +118,7 @@ public class GuessingGame extends JFrame {
 		btnPlayAgane.setBounds(308, 228, 116, 23);
 		getContentPane().add(btnPlayAgane);
 	}
-// The main method of program.
+// The main method of program
 	public static void main(String[] args) {
 		GuessingGame theGame = new GuessingGame();
 		theGame.newGame();
